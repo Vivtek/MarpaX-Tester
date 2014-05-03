@@ -1,0 +1,16 @@
+<pre class="grammar">[% grammar %]</pre>
+[% IF status %]
+Marpa version [% ver %].<br/>
+[% FOREACH r = result %]
+Test case:
+<pre class="test">[% r.test %]</pre>
+[% IF r.status %]
+<pre class="parse">[% r.parse %]</pre>
+[% ELSE %]
+<i>Did not parse.</i>
+[% END %]
+[% END %]
+[% ELSE %]
+Marpa version [% ver %] says:
+<pre class="error">[% error %]</pre>
+[% END %]
